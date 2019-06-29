@@ -1,4 +1,4 @@
-import * as TYPES from '../actions/actionTypes';
+import * as TYPES from "../actions/actionTypes";
 
 const defaultState = {
     offers: [],

@@ -1,15 +1,13 @@
-import React from 'react';
-import OfferCard from './OfferCard';
+import React from "react";
+import OfferCard from "./OfferCard";
 
 import * as offerActions from "../actions/offerActions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-
-
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import Select from "@material-ui/core/Select";
 
 class OfferGrid extends React.Component {
 
@@ -35,8 +33,8 @@ class OfferGrid extends React.Component {
                         value={this.props.sortBy}
                         onChange={this.handleChange}
                         inputProps={{
-                            name: 'sortBy',
-                            id: 'sortBy',
+                            name: "sortBy",
+                            id: "sortBy",
                         }}
                     >
                         <MenuItem value="popularity">Popularity</MenuItem>

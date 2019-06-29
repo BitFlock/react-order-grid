@@ -1,5 +1,5 @@
-import React from 'react';
-import OfferGrid from './components/OfferGrid';
+import React from "react";
+import OfferGrid from "./components/OfferGrid";
 
 import { Provider as ReduxProvider } from "react-redux";
 import configureStore from "./store";

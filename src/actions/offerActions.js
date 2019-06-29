@@ -1,5 +1,5 @@
-import * as TYPES from './actionTypes';
-import { getOffers as getOffersApi } from '../api/offers';
+import * as TYPES from "./actionTypes";
+import { getOffers as getOffersApi } from "../api/offers";
 
 export const getOffers = () => dispatch => {
     getOffersApi().then(result => {
