@@ -5,18 +5,26 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 
-import "./OfferGrid.css";
-
 const useStyles = makeStyles({
   card: {
-        width: 300,
-        height: 300,
-        margin: 5
+      width: 250,
+      height: 250,
+      backgroundColor: "rgba(0, 0, 0, .6)"
   },
   media: {
-      width: 300,
-      height: 170
+      width: "auto",
+      height: 100,
+      margin: "auto"
   },
+  content: {
+      height: "100%",
+      backgroundColor: "rgba(0, 0, 0, .5)",
+      color: "rgba(255, 255, 255, .8)"
+  },
+  pos: {
+      height: "40%",
+      verticalAlign: "bottom"
+  }
 });
 
 export default function OfferCard(props) {
@@ -25,15 +33,16 @@ export default function OfferCard(props) {
   return (
     <Card className={classes.card}>
         <CardMedia
+            component="img"
             className={classes.media}
             image={props.image}
         />
-        <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-            {props.name}
+        <CardContent className={classes.content}>
+        <Typography className={classes.pos} variant="overline" component="h2">
+                {props.name}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            {props.price.value} {props.price.currency}
+            <Typography align="right" variant="body2" component="p">
+                {props.price.value} {props.price.currency}
             </Typography>
         </CardContent>
     </Card>

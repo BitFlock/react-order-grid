@@ -1,4 +1,17 @@
 .OfferGrid {
+  flex-grow: 1;
+  padding-top: 50px;
+}
+
+.SortHeader {
   display: flex;
-  flex-wrap: wrap; 
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+}
+
+.SortHeader > * {
+  margin: 10px;
 }

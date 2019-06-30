@@ -5,9 +5,13 @@ import * as offerActions from "../actions/offerActions";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
+import Grid from "@material-ui/core/Grid";
+
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
+
+import "./OfferGrid.css";
 
 class OfferGrid extends React.Component {
 
@@ -20,15 +24,29 @@ class OfferGrid extends React.Component {
     }
 
     renderCards = () => {
-        const cards = this.props.offers.map(offer => <OfferCard key={offer.id} name={offer.description} image={offer.images.medium} price={offer.prices.payablePrice.amount} />);
-        return <div className="OfferGrid">{cards}</div>;
+        
+        const cards = this.props.offers.map(offer => (
+            <Grid key={offer.id} item>
+                <OfferCard name={offer.description} image={offer.images.medium} price={offer.prices.payablePrice.amount} />
+            </Grid>
+        ));
+        
+        return (
+            <Grid container className="OfferGrid" spacing={2}>
+                <Grid item xs={12}>
+                    <Grid container justify="center" spacing={2}>
+                        {cards}
+                    </Grid>
+                </Grid>
+            </Grid> 
+         );
     }
 
     render() {
         return (
             <div>
-                <div style={{display: "flex", alignItems: "center"}}>
-                    <InputLabel htmlFor="sortBy" style={{margin: 15}}>Sort by</InputLabel>
+                <div className="SortHeader">
+                    <InputLabel htmlFor="sortBy">Sort by</InputLabel>
                     <Select
                         value={this.props.sortBy}
                         onChange={this.handleChange}
